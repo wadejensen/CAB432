@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Modifying DIVs - Heading toward AJAX</title>
+<style type="text/css">
+#div1 {
+      top: 30px; 
+      left: 30px; 
+      border: 2px solid #000; 
+}
+#div2 {
+      border: 2px solid #000; 
+}
+img {
+     border: 1px solid #000;
+     width: 800px; 
+     height: 600px;
+}
+</style>
+<script type="text/javascript">
+
+function updateDiv() {
+      //We grab elements from the doc based on their ID 
+      //This is the most reliable method 
+      var div1 = document.getElementById("div1");
+      div1.innerHTML = "<h2>Things ain't what they used to be</h2>";
+   
+      //A quick picture shift
+      var div2 = document.getElementById("div2");
+      div2.innerHTML = "<h3>Cradle Mountain Climb</h3>" + 
+                   "<img id='img2' src='DSCN0973.JPG' />";
+}
+
+</script>
+</head>
+<body onClick="updateDiv();">
+<div id="div1">
+   <h2>Obituary: Robert S. Macnamara</h2>
+   <h3>From <i>The Economist</i></h3>
+   <p>QUANTIFICATION was a word Robert McNamara loved. Numbers could express almost any human activity.
+Well, perhaps not beauty, honour, love. But certainly the rigours of a youthful trip to sea (19 bed-bug bites on
+one leg), and the pleasure of climbing Mount Whitney, all 14,495 feet. Five or six bullet points, reinforced
+when you saw him with vigorous hand-chops, summed up any argument. There were four McNamara steps to
+changing the thinking of any organisation, including the Pentagon: state an objective, work out how to get
+there, cost out everything, systematically monitor progress against the plan. There were 11 lessons to be
+learned from the war in Vietnam, but most of them occurred to him too late.</p>
+
+<p>Things you could count, he said, you ought to count. At the Ford Motor Company, where he was one of the ten
+'Whiz Kids' brought in in 1946 to shake things up, all the components of each new Chevy (made by GM)
+would be laid out on a table to inspect. This was not cheating, but competitive evaluation. At the Air Force
+Office of Statistical Control, where he worked in 1943-45, he counted the firebombing sorties made by the B-
+29s, at what height, with what percentage hits on target (58% of Yokohama, 51% of Tokyo). System and data
+together helped win that war. In the Pentagon in 1965, again by applying metrics - targets hit, captives taken,
+weapons seized, the enemy's body-count - he could tell with equal certainty that America was losing. </p>
+</div>
+<div id="div2">
+    <h3>Cradle Mountain Climb - Looking Down</h3>
+    <img id="img1" src="DSCN0972.JPG" />
+</div>
+</body>
+</html>

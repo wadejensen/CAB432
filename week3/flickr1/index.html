@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+ <title>The Flickr Experiment</title>
+ </head>
+ <body>
+<script>
+ function jsonFlickrApi(rsp) {
+   var apiKey = "myAPIKey";
+   var searchTerm = "mySearchTerm";
+   var images = rsp.photos.photo;
+
+   var htmls = images.map( function(image) {
+      var imageLink = 'https://www.flickr.com/photos/'+image.owner+'/'+image.id+'.jpg'
+      var html = '<a href="'+imageLink+'">'+
+                    '<img alt="'+image.title+'" src="https://farm'+image.farm+'.staticflickr.com/'+image.server+'/'+image.id+'_'+image.secret+'_m.jpg"/>'+
+                    '</a>';
+      return html;
+   });
+
+   var bodyElement = document.getElementsByTagName("BODY")[0];  
+   document.writeln(htmls.join());
+ }
+ </script>
+ <script
+src="https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=myAPIKey&
+tags=searchTerm&per_page=100&format=json">
+ </script>
+ </body>
+</html>
